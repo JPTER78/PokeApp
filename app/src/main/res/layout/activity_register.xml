@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5DCFA"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <View
         android:id="@+id/view"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494" />
+        app:layout_constraintVertical_bias="0.505" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -45,6 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
         android:layout_width="73dp"
         android:layout_height="83dp"
         android:layout_marginStart="10dp"
@@ -67,50 +68,80 @@
         app:srcCompat="@drawable/jcollector" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etNombreRegister"
         android:layout_width="241dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="200dp"
         android:background="#F5DCFA"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.263" />
 
     <EditText
-        android:id="@+id/etContrasena"
+        android:id="@+id/etEmailRegister"
         android:layout_width="241dp"
         android:layout_height="48dp"
         android:background="#F5DCFA"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <EditText
+        android:id="@+id/etContrasenaRegister"
+        android:layout_width="241dp"
+        android:layout_height="48dp"
+        android:background="#F5DCFA"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="271dp"
         android:layout_height="126dp"
+        android:layout_marginBottom="370dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/login" />
+        app:srcCompat="@drawable/register" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="116dp"
         android:layout_height="51dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+        app:srcCompat="@drawable/name" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="116dp"
+        android:layout_height="51dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/email" />
+        app:layout_constraintVertical_bias="0.287"
+        app:srcCompat="@drawable/email"/>
 
     <ImageView
         android:id="@+id/imageView7"
@@ -119,46 +150,50 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853"
         app:srcCompat="@drawable/password" />
 
     <Button
         android:id="@+id/btnCrear"
         android:layout_width="117dp"
         android:layout_height="44dp"
+        android:layout_marginStart="309dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="290dp"
+        android:layout_marginEnd="15dp"
         android:background="@android:color/transparent"
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:padding="0dp"
-        android:text="Register"
+        android:text="Create"
         android:textColor="#F5DCFA"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etContrasena" />
+        app:layout_constraintTop_toBottomOf="@+id/etContrasena"
+        app:layout_constraintVertical_bias="0.99" />
 
     <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="117dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/btnIrLogin"
+        android:layout_width="255dp"
+        android:layout_height="37dp"
         android:background="@android:color/transparent"
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:padding="0dp"
-        android:text="Login"
+        android:text="I already have an account"
         android:textColor="#F5DCFA"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etContrasena" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
