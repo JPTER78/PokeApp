@@ -13,6 +13,7 @@ import com.example.pokeapp.databinding.ActivityMainBinding
 import com.example.pokeapp.databinding.ActivityMenuDentroBinding
 import com.example.pokeapp.fragments.FragmentExplorar
 import com.example.pokeapp.fragments.FragmentHome
+import com.example.pokeapp.fragments.FragmentPokeia
 import com.example.pokeapp.fragments.FragmentTienda
 
 class MenuDentroActivity : AppCompatActivity() {
@@ -50,6 +51,9 @@ class MenuDentroActivity : AppCompatActivity() {
                 R.id.navigation_explorar -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, FragmentExplorar()).commit()}
+                R.id.navigation_ia -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, FragmentPokeia()).commit()}
 
             }
             false

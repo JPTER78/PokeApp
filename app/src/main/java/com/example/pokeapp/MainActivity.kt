@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             val requestBody = json.toString().toRequestBody(mediaType)
 
             val request = Request.Builder()
-                .url("http://10.152.94.83:8080/pokeapp/usuarios/login")
+                .url("http://10.152.94.33:8080/pokeapp/usuarios/login")
                 .post(requestBody)
                 .build()
 

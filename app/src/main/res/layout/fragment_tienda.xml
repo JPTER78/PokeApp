@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FragmentTienda">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Barra de búsqueda -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Buscar por código de carta"
+        android:iconifiedByDefault="false"/>
+
+    <!-- Botón Subir Producto -->
+    <Button
+        android:id="@+id/btnSubirProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subir nuevo producto"
+        android:layout_marginVertical="8dp"/>
+
+    <!-- RecyclerView para las ventas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVentas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:scrollbars="vertical"/>
 
-</FrameLayout>
+</LinearLayout>

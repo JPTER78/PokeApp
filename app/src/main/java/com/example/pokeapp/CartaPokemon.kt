@@ -5,6 +5,7 @@ data class PokemonCardResponse(
 )
 
 data class PokemonCard(
+    val id: String,
     val name: String,
     val types: List<String>?,
     val images: CardImage

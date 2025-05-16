@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val requestBody = json.toString().toRequestBody(mediaType)
 
-            val request = Request.Builder().url("http://10.152.94.83:8080/pokeapp/usuarios").post(requestBody).build()
+            val request = Request.Builder().url("http://10.152.94.33:8080/pokeapp/usuarios").post(requestBody).build()
 
             client.newCall(request).enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {

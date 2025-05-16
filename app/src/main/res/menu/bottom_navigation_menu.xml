@@ -3,13 +3,17 @@
     <item
         android:id="@+id/navigation_home"
         android:title="Perfil"
-        android:icon="@color/material_dynamic_neutral_variant100" />
+        android:icon="@drawable/home" />
     <item
         android:id="@+id/navigation_tienda"
         android:title="Tienda"
-        android:icon="@color/material_dynamic_secondary40" />
+        android:icon="@drawable/tienda" />
     <item
         android:id="@+id/navigation_explorar"
         android:title="Explorar"
-        android:icon="@color/material_dynamic_primary90" />
+        android:icon="@drawable/search" />
+    <item
+        android:id="@+id/navigation_ia"
+        android:title="PokeIA"
+        android:icon="@drawable/ai" />
 </menu>
