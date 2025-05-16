@@ -46,6 +46,7 @@ class FragmentTienda : Fragment() {
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
          * @return A new instance of fragment FragmentTienda.
+         * hola
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
