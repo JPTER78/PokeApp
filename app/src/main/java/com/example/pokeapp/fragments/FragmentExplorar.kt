@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -38,16 +39,19 @@ class FragmentExplorar : Fragment() {
         setupRecyclerView()
         setupObservers()
         setupSearch()
+
+        binding.btnFiltros.setOnClickListener {
+            showTypeFilterDialog()
+        }
     }
 
     private fun setupRecyclerView() {
         binding.recyclerViewCartas.layoutManager = GridLayoutManager(requireContext(), 3)
 
-        // Espaciado más ajustado
         binding.recyclerViewCartas.addItemDecoration(
             GridSpacingItemDecoration(
                 spanCount = 3,
-                spacing = 6.dpToPx(), // Reducido el espaciado
+                spacing = 6.dpToPx(),
                 includeEdge = true
             )
         )
@@ -79,9 +83,25 @@ class FragmentExplorar : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 viewModel.filterCards(s.toString())
             }
+
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+    }
+
+    private fun showTypeFilterDialog() {
+        val types = arrayOf("Fire", "Water", "Grass", "Lightning", "Psychic", "Fighting", "Darkness", "Metal", "Fairy", "Dragon", "Colorless")
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Selecciona un tipo")
+        builder.setItems(types) { _, which ->
+            val selectedType = types[which]
+            viewModel.applyTypeFilter(selectedType)
+        }
+        builder.setNegativeButton("Limpiar filtros") { _, _ ->
+            viewModel.clearFilters()
+        }
+        builder.setNeutralButton("Cancelar", null)
+        builder.show()
     }
 
     private fun showCardDetails(card: PokemonCard) {

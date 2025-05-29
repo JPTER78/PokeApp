@@ -25,7 +25,9 @@
             android:id="@+id/btnFiltros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Filtros"/>
+            android:text="Filtros"
+            android:backgroundTint="@color/pinkyOscuro"/>
+
     </LinearLayout>
 
     <!-- ProgressBar centrado -->

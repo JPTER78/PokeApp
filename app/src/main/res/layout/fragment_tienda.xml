@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/pinky">
 
     <!-- Barra de búsqueda -->
     <SearchView
@@ -19,8 +20,9 @@
         android:id="@+id/btnSubirProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
         android:text="Subir nuevo producto"
-        android:layout_marginVertical="8dp"/>
+        android:backgroundTint="@color/pinkyOscuro" />
 
     <!-- RecyclerView para las ventas -->
     <androidx.recyclerview.widget.RecyclerView

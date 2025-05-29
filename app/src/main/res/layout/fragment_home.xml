@@ -19,12 +19,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FAVORITOS"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/pinkyOscuro"
+        android:gravity="center"
         android:paddingBottom="16dp"
-        android:gravity="center"/>
+        android:text="TUS CARTAS"
+        android:textColor="@color/pinkyOscuro"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavorites"

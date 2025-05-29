@@ -38,7 +38,7 @@ class FragmentPokeia : Fragment() {
     private val client = OkHttpClient()
     private val JSON_MEDIA_TYPE = "application/json; charset=utf-8".toMediaType()
     private val API_URL = "https://openrouter.ai/api/v1/chat/completions"
-    private val API_KEY = "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"
+    private val API_KEY = "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"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -89,6 +89,8 @@ class FragmentPokeia : Fragment() {
     }
 
     private fun sendRequest(pregunta: String) {
+        updateUIThinking() // Mostrar mensaje temporal
+
         val jsonBody = createJsonBody(pregunta)
         val request = Request.Builder()
             .url(API_URL)
@@ -145,9 +147,15 @@ class FragmentPokeia : Fragment() {
 
     private fun updateUIWithResponse(content: String) {
         Handler(Looper.getMainLooper()).post {
-            cardRespuesta.visibility = View.VISIBLE
-            cardRespuesta.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up))
             respuestaTextView.text = content.trim()
+        }
+    }
+
+    private fun updateUIThinking() {
+        Handler(Looper.getMainLooper()).post {
+            cardRespuesta.visibility = View.VISIBLE
+            respuestaTextView.text = "La PokeIA está pensando..."
+            cardRespuesta.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up))
         }
     }
 

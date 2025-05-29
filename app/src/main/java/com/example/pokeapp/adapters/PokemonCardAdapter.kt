@@ -142,4 +142,7 @@ class PokemonCardAdapter(
         cards = newList
         notifyDataSetChanged()
     }
+
+
+
 }

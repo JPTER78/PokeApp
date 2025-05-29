@@ -18,6 +18,10 @@ class PokemonCardsViewModel : ViewModel() {
     private val _error = MutableLiveData<String?>()
     val error: LiveData<String?> = _error
 
+    private var originalCards: List<PokemonCard> = listOf()
+    private var currentQuery: String = ""
+    private var currentTypeFilter: String? = null
+
     init {
         fetchPokemonCards()
     }
@@ -27,6 +31,7 @@ class PokemonCardsViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = RetrofitInstance.api.getListadoCartas()
+                originalCards = response.data
                 _pokemonCards.value = response.data
                 _error.value = null
             } catch (e: Exception) {
@@ -37,14 +42,29 @@ class PokemonCardsViewModel : ViewModel() {
         }
     }
 
-    fun filterCards(query: String) {
-        val currentList = _pokemonCards.value ?: return
-        if (query.isEmpty()) {
-            _pokemonCards.value = currentList
-        } else {
-            _pokemonCards.value = currentList.filter { card ->
-                card.name.contains(query, ignoreCase = true)
-            }
+    fun filterCards(query: String = currentQuery, type: String? = currentTypeFilter) {
+        currentQuery = query
+        currentTypeFilter = type
+
+        val filteredList = originalCards.filter { card ->
+            val matchesQuery = card.name.contains(query, ignoreCase = true)
+            val matchesType = type.isNullOrBlank() || card.types?.any {
+                it.equals(type, ignoreCase = true)
+            } == true
+
+            matchesQuery && matchesType
         }
+
+        _pokemonCards.value = filteredList
+    }
+
+    fun applyTypeFilter(type: String?) {
+        filterCards(query = currentQuery, type = type)
+    }
+
+    fun clearFilters() {
+        currentQuery = ""
+        currentTypeFilter = null
+        _pokemonCards.value = originalCards
     }
 }
