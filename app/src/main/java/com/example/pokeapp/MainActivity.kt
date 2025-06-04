@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                         runOnUiThread {
                             Toast.makeText(this@MainActivity, "Login correcto", Toast.LENGTH_SHORT).show()
 
-                            // GUARDAR DATOS //
 
                             val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
                             with(sharedPref.edit()) {
@@ -74,8 +73,6 @@ class MainActivity : AppCompatActivity() {
                                 putString("email", binding.etEmail.text.toString())
                                 apply()
                             }
-
-                            // IR A OTRO SITIO //
 
                             startActivity(Intent(this@MainActivity, MenuDentroActivity::class.java))
 

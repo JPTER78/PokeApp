@@ -7,7 +7,6 @@
     android:padding="16dp"
     android:background="@color/pinky">
 
-    <!-- Barra de búsqueda -->
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:queryHint="Buscar por código de carta"
         android:iconifiedByDefault="false"/>
 
-    <!-- Botón Subir Producto -->
     <Button
         android:id="@+id/btnSubirProducto"
         android:layout_width="match_parent"
@@ -24,7 +22,6 @@
         android:text="Subir nuevo producto"
         android:backgroundTint="@color/pinkyOscuro" />
 
-    <!-- RecyclerView para las ventas -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvVentas"
         android:layout_width="match_parent"

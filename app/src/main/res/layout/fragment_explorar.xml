@@ -7,7 +7,6 @@
     android:background="@color/pinky"
     android:padding="8dp">
 
-    <!-- Barra de búsqueda y botón de filtros -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
 
     </LinearLayout>
 
-    <!-- ProgressBar centrado -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
@@ -39,7 +37,6 @@
         android:layout_marginTop="16dp"
         android:visibility="gone"/>
 
-    <!-- RecyclerView para las cartas -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCartas"
         android:layout_width="match_parent"

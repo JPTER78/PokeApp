@@ -5,13 +5,11 @@
     android:layout_height="wrap_content"
     android:padding="4dp">
 
-    <!-- Marco visible para los bordes -->
     <View
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/card_border" />
 
-    <!-- Imagen ajustada perfectamente -->
     <ImageView
         android:id="@+id/imgPokemonCard"
         android:layout_width="match_parent"

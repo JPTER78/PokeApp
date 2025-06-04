@@ -89,7 +89,7 @@ class FragmentPokeia : Fragment() {
     }
 
     private fun sendRequest(pregunta: String) {
-        updateUIThinking() // Mostrar mensaje temporal
+        updateUIThinking()
 
         val jsonBody = createJsonBody(pregunta)
         val request = Request.Builder()

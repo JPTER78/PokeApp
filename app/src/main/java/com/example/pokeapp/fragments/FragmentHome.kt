@@ -130,7 +130,6 @@ class FragmentHome : Fragment() {
                         types = types
                     )
 
-                    // Verificar si el fragmento está adjunto
                     if (isAdded) {
                         requireActivity().runOnUiThread {
                             favoriteCards.add(card)
@@ -143,7 +142,7 @@ class FragmentHome : Fragment() {
     }
 
     private fun showToast(message: String) {
-        if (isAdded) { // Verificar antes de usar requireActivity()
+        if (isAdded) {
             requireActivity().runOnUiThread {
                 Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
             }

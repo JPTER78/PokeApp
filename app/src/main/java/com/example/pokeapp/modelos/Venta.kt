@@ -6,6 +6,6 @@ data class Venta(
     val fecha: String,
     var estado: String,
     var imageUrl: String? = null,
-    val emailVendedor: String? = null,  // Nuevo campo
-    var emailComprador: String? = null  // Nuevo campo
+    val emailVendedor: String? = null,
+    var emailComprador: String? = null
 )

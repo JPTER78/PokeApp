@@ -47,17 +47,14 @@ class FavoritosAdapter(
 
             val imageView = findViewById<ImageView>(R.id.imgPreview)
 
-            // Carga la imagen con Glide
             Glide.with(context)
                 .load(imageUrl)
                 .placeholder(R.drawable.pokemon_placeholder)
                 .error(R.drawable.error)
                 .into(imageView)
 
-            // Cierra el diálogo al tocar la imagen
             imageView.setOnClickListener { dismiss() }
 
-            // Configuración adicional para mejor visualización
             window?.apply {
                 setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
                 setBackgroundDrawable(ColorDrawable(Color.MAGENTA))
